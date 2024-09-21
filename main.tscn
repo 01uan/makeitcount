@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bcqn0tgumfhk5"]
 
-[ext_resource type="Texture2D" uid="uid://bjw1p8wkmvorn" path="res://corsshair_standin.png" id="1_liony"]
+[ext_resource type="Texture2D" uid="uid://c50bcebp17qv1" path="res://corsshair_standin.png" id="1_liony"]
 [ext_resource type="Script" path="res://crosshair.gd" id="1_y8dqm"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_2qavo"]
