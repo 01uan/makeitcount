@@ -130,6 +130,7 @@ position = Vector2(104, 161)
 sprite_frames = SubResource("SpriteFrames_q4t32")
 autoplay = "default"
 frame_progress = 0.963798
+
 [node name="Monster_Hit" type="AudioStreamPlayer2D" parent="."]
 unique_name_in_owner = true
 stream = ExtResource("21_4thaw")
