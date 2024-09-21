@@ -1,0 +1,59 @@
+[gd_scene load_steps=4 format=3 uid="uid://b57l2viaouijb"]
+
+[ext_resource type="Texture2D" uid="uid://bot48k24db7xk" path="res://assets/timer-bar.png" id="1_jbbn8"]
+[ext_resource type="Texture2D" uid="uid://bers63wajoki2" path="res://assets/timer-border-sheet.png" id="2_rlirn"]
+
+[sub_resource type="GDScript" id="GDScript_tudxa"]
+script/source = "extends Node2D
+
+@export var Duration_seconds = 10
+var framerate = 60
+var bar_length
+var original_length
+var remaining_time
+
+var bar_pos
+var original_pos
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	original_length = $bar.scale.x
+	bar_length = original_length
+	remaining_time = Duration_seconds
+	
+	original_pos = $bar.position.x
+	bar_pos = original_pos
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	if remaining_time > 0:
+		# Calculate shrink per frame based on original length
+		var shrink_per_frame = original_length / (Duration_seconds * framerate)
+		var move_per_frame = original_pos / (Duration_seconds * framerate)
+
+		# Update the bar length and remaining time
+		bar_length -= shrink_per_frame
+		bar_pos -= move_per_frame
+		remaining_time -= delta
+
+		# Set the new scale
+		$bar.scale.x = bar_length / original_length
+		$bar.position.x = bar_pos
+
+		# Optional: Reset the bar when the countdown ends
+		if remaining_time <= 0:
+			bar_length = 0
+			$bar.scale.x = 0
+"
+
+[node name="timer-node" type="Node2D"]
+position = Vector2(501, 153)
+script = SubResource("GDScript_tudxa")
+
+[node name="bar" type="Sprite2D" parent="."]
+position = Vector2(67, 10)
+texture = ExtResource("1_jbbn8")
+
+[node name="border" type="Sprite2D" parent="."]
+position = Vector2(67, 10)
+texture = ExtResource("2_rlirn")
