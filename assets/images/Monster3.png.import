@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bot48k24db7xk"
-path="res://.godot/imported/timer-bar.png-c4559e6ae67cdfbe78256506c062aa4a.ctex"
+uid="uid://bsotu2sylf5le"
+path="res://.godot/imported/Monster3.png-017f6bc282a86c3859661f4cf6c48574.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/timer-bar.png"
-dest_files=["res://.godot/imported/timer-bar.png-c4559e6ae67cdfbe78256506c062aa4a.ctex"]
+source_file="res://assets/images/Monster3.png"
+dest_files=["res://.godot/imported/Monster3.png-017f6bc282a86c3859661f4cf6c48574.ctex"]
 
 [params]
 

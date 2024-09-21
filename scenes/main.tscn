@@ -1,23 +1,23 @@
 [gd_scene load_steps=9 format=3 uid="uid://bcqn0tgumfhk5"]
 
-[ext_resource type="Texture2D" uid="uid://b3itr12f30n11" path="res://Monster1.png" id="1_op34y"]
-[ext_resource type="Script" path="res://crosshair.gd" id="1_y8dqm"]
-[ext_resource type="Texture2D" uid="uid://ct4y0k0v3oig" path="res://Monster2.png" id="2_jhumk"]
-[ext_resource type="Texture2D" uid="uid://bsotu2sylf5le" path="res://Monster3.png" id="3_flkgy"]
-[ext_resource type="Texture2D" uid="uid://b0m57yslci1ds" path="res://Crosshair.png" id="4_k86no"]
-[ext_resource type="Script" path="res://HitZone.gd" id="6_uwofi"]
+[ext_resource type="Texture2D" uid="uid://b3itr12f30n11" path="res://assets/images/Monster1.png" id="1_tpknx"]
+[ext_resource type="Texture2D" uid="uid://ct4y0k0v3oig" path="res://assets/images/Monster2.png" id="2_us7o0"]
+[ext_resource type="Texture2D" uid="uid://bsotu2sylf5le" path="res://assets/images/Monster3.png" id="3_pkbvc"]
+[ext_resource type="Texture2D" uid="uid://b0m57yslci1ds" path="res://assets/images/Crosshair.png" id="4_gsvwh"]
+[ext_resource type="Script" path="res://scripts/crosshair.gd" id="5_uwowx"]
+[ext_resource type="Script" path="res://scripts/HitZone.gd" id="6_hyebj"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_o3oc8"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_op34y")
+"texture": ExtResource("1_tpknx")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_jhumk")
+"texture": ExtResource("2_us7o0")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_flkgy")
+"texture": ExtResource("3_pkbvc")
 }],
 "loop": true,
 "name": &"default",
@@ -43,12 +43,12 @@ frame = 1
 [node name="Crosshair" type="Sprite2D" parent="."]
 position = Vector2(223, 226)
 scale = Vector2(-1.77194, 1.37258)
-texture = ExtResource("4_k86no")
+texture = ExtResource("4_gsvwh")
 flip_h = true
-script = ExtResource("1_y8dqm")
+script = ExtResource("5_uwowx")
 
 [node name="HitZone" type="Sprite2D" parent="."]
 position = Vector2(229, 123)
 scale = Vector2(37.1014, -24.4129)
 texture = SubResource("PlaceholderTexture2D_rlr3b")
-script = ExtResource("6_uwofi")
+script = ExtResource("6_hyebj")

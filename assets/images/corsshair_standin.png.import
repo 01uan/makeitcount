@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b3itr12f30n11"
-path="res://.godot/imported/Monster1.png-3efb90f677d97e77f0d94ddee295b4af.ctex"
+uid="uid://bjw1p8wkmvorn"
+path="res://.godot/imported/corsshair_standin.png-6858a90f3ff95547c43346bffa4aa7ea.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Monster1.png"
-dest_files=["res://.godot/imported/Monster1.png-3efb90f677d97e77f0d94ddee295b4af.ctex"]
+source_file="res://assets/images/corsshair_standin.png"
+dest_files=["res://.godot/imported/corsshair_standin.png-6858a90f3ff95547c43346bffa4aa7ea.ctex"]
 
 [params]
 

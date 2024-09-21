@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjw1p8wkmvorn"
-path="res://.godot/imported/corsshair_standin.png-3c463cf1d3e19ebd9491f6013641d295.ctex"
+uid="uid://bers63wajoki2"
+path="res://.godot/imported/timer-border-sheet.png-667c740a86aeb37c3e5105cf71807fbb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://corsshair_standin.png"
-dest_files=["res://.godot/imported/corsshair_standin.png-3c463cf1d3e19ebd9491f6013641d295.ctex"]
+source_file="res://assets/images/timer-border-sheet.png"
+dest_files=["res://.godot/imported/timer-border-sheet.png-667c740a86aeb37c3e5105cf71807fbb.ctex"]
 
 [params]
 

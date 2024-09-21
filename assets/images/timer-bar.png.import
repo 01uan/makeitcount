@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bers63wajoki2"
-path="res://.godot/imported/timer-border-sheet.png-f4c4de3ee497bc4740113d9b90b68dd2.ctex"
+uid="uid://bot48k24db7xk"
+path="res://.godot/imported/timer-bar.png-28b70a3a69ad2363ebbb97d1771d325b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/timer-border-sheet.png"
-dest_files=["res://.godot/imported/timer-border-sheet.png-f4c4de3ee497bc4740113d9b90b68dd2.ctex"]
+source_file="res://assets/images/timer-bar.png"
+dest_files=["res://.godot/imported/timer-bar.png-28b70a3a69ad2363ebbb97d1771d325b.ctex"]
 
 [params]
 

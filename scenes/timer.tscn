@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://b57l2viaouijb"]
 
-[ext_resource type="Texture2D" uid="uid://bot48k24db7xk" path="res://assets/timer-bar.png" id="1_jbbn8"]
-[ext_resource type="Texture2D" uid="uid://bers63wajoki2" path="res://assets/timer-border-sheet.png" id="2_rlirn"]
+[ext_resource type="Texture2D" uid="uid://bot48k24db7xk" path="res://assets/images/timer-bar.png" id="1_r856p"]
+[ext_resource type="Texture2D" uid="uid://bers63wajoki2" path="res://assets/images/timer-border-sheet.png" id="2_lihh7"]
 
 [sub_resource type="GDScript" id="GDScript_tudxa"]
 script/source = "extends Node2D
@@ -47,13 +47,12 @@ func _process(delta: float) -> void:
 "
 
 [node name="timer-node" type="Node2D"]
-position = Vector2(501, 153)
+position = Vector2(582, 68)
+scale = Vector2(6, 4.2654)
 script = SubResource("GDScript_tudxa")
 
 [node name="bar" type="Sprite2D" parent="."]
-position = Vector2(67, 10)
-texture = ExtResource("1_jbbn8")
+texture = ExtResource("1_r856p")
 
 [node name="border" type="Sprite2D" parent="."]
-position = Vector2(67, 10)
-texture = ExtResource("2_rlirn")
+texture = ExtResource("2_lihh7")
