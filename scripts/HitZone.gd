@@ -1,5 +1,6 @@
 extends Sprite2D  # Assuming this script is attached to the hitzone sprite
 
+var pointsToMakeMonsterMad: int = 5
 @onready var monster_hit = $"../Monster_Hit"
 
 var points: int = 0
@@ -43,6 +44,11 @@ func random_reposition():
 func increment_point():
 	points += 1
 	update_points_label()
+	
+	if points == pointsToMakeMonsterMad:
+		%"Monster".changeMonsterPhaseMad()
+	
+
 
 func play_explosion_animation():
 	explosion_sprite.global_position = global_position
@@ -54,6 +60,7 @@ func _on_explosion_animation_finished():
 
 func decrement_bullets():
 	bullets -= 1
+
 
 func update_points_label():
 	$"../timer-node".elapsed_time -= 1

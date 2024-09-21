@@ -109,12 +109,11 @@ animations = [{
 script = SubResource("GDScript_lrl77")
 
 [node name="Monster" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
 position = Vector2(550, 375)
 scale = Vector2(1, 1.032)
 sprite_frames = SubResource("SpriteFrames_o3oc8")
-animation = &"mad"
 autoplay = "default"
-frame_progress = 0.0683712
 script = ExtResource("7_mkpx6")
 
 [node name="Crosshair" type="Sprite2D" parent="."]
