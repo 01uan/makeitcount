@@ -1,6 +1,6 @@
 extends Sprite2D
 
-var speed: float = 200
+var speed: float = 400
 var mode = "normal"
 
 func change_mode(param_mode):

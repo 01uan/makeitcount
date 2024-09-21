@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cnr214qowu5nu"
+path="res://.godot/imported/Psychedelic Crater.mp3-1158b22cf8f69d785dd44297c2dc593a.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/Psychedelic Crater.mp3"
+dest_files=["res://.godot/imported/Psychedelic Crater.mp3-1158b22cf8f69d785dd44297c2dc593a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
