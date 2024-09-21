@@ -1,11 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://bcqn0tgumfhk5"]
-
+[gd_scene load_steps=9 format=3 uid="uid://bcqn0tgumfhk5"]
 
 [ext_resource type="Texture2D" uid="uid://b3itr12f30n11" path="res://Monster1.png" id="1_op34y"]
 [ext_resource type="Script" path="res://crosshair.gd" id="1_y8dqm"]
 [ext_resource type="Texture2D" uid="uid://ct4y0k0v3oig" path="res://Monster2.png" id="2_jhumk"]
 [ext_resource type="Texture2D" uid="uid://bsotu2sylf5le" path="res://Monster3.png" id="3_flkgy"]
 [ext_resource type="Texture2D" uid="uid://b0m57yslci1ds" path="res://Crosshair.png" id="4_k86no"]
+[ext_resource type="Script" path="res://HitZone.gd" id="6_uwofi"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_o3oc8"]
 animations = [{
@@ -29,6 +29,8 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_rlr3b"]
+
 [node name="Node2D" type="Node2D"]
 
 [node name="Monster" type="AnimatedSprite2D" parent="."]
@@ -44,3 +46,9 @@ scale = Vector2(-1.77194, 1.37258)
 texture = ExtResource("4_k86no")
 flip_h = true
 script = ExtResource("1_y8dqm")
+
+[node name="HitZone" type="Sprite2D" parent="."]
+position = Vector2(229, 123)
+scale = Vector2(37.1014, -24.4129)
+texture = SubResource("PlaceholderTexture2D_rlr3b")
+script = ExtResource("6_uwofi")
