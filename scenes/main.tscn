@@ -22,6 +22,24 @@
 [ext_resource type="Texture2D" uid="uid://dna1y3q0l1nbh" path="res://assets/images/Explosion8.png" id="15_mocoh"]
 [ext_resource type="AudioStream" uid="uid://dgqg31o37kq1n" path="res://assets/sounds/monster_hit.mp3" id="21_4thaw"]
 
+[sub_resource type="GDScript" id="GDScript_lrl77"]
+script/source = "extends Node2D
+
+
+func game_over() -> void:
+	get_tree().change_scene_to_file(\"res://scenes/game-over.tscn\")
+	$Hud.keep_timing = false
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_o3oc8"]
 animations = [{
 "frames": [{
@@ -88,6 +106,7 @@ animations = [{
 }]
 
 [node name="Node2D" type="Node2D"]
+script = SubResource("GDScript_lrl77")
 
 [node name="Monster" type="AnimatedSprite2D" parent="."]
 position = Vector2(550, 375)
@@ -114,8 +133,10 @@ script = ExtResource("6_hyebj")
 [node name="timer-node" parent="." instance=ExtResource("7_t6w6a")]
 position = Vector2(578, 51)
 scale = Vector2(9.007, -6.152)
+shrink_duration = 12.0
 
 [node name="Hud" parent="." instance=ExtResource("8_t14eh")]
+visible = true
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0

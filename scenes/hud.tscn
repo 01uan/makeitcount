@@ -5,20 +5,22 @@ script/source = "extends Control
 
 var begin_time
 @export var points = 0
+var keep_timing = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	begin_time = Time.get_ticks_msec()
-	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	$TimeLabel.text = \"Time elapsed: \" + str((Time.get_ticks_msec() - begin_time) / 1000.00) 
-	$PointsLabel.text = \"Points: \" + str(points)
+	if keep_timing:
+		$TimeLabel.text = \"Time elapsed: \" + str((Time.get_ticks_msec() - begin_time) / 1000.00) 
+		$PointsLabel.text = \"Points: \" + str(points)
 "
 
 [node name="Hud" type="Control"]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -34,6 +36,7 @@ offset_bottom = 23.0
 text = "Time elapsed:"
 
 [node name="PointsLabel" type="Label" parent="."]
+layout_mode = 0
 offset_left = -1.0
 offset_top = 31.0
 offset_right = 48.0
