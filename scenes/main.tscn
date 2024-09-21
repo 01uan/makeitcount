@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://bcqn0tgumfhk5"]
+[gd_scene load_steps=26 format=3 uid="uid://bcqn0tgumfhk5"]
 
 [ext_resource type="Texture2D" uid="uid://b3itr12f30n11" path="res://assets/images/Monster1.png" id="1_tpknx"]
 [ext_resource type="Texture2D" uid="uid://ct4y0k0v3oig" path="res://assets/images/Monster2.png" id="2_us7o0"]
@@ -21,6 +21,24 @@
 [ext_resource type="Texture2D" uid="uid://tmt0tgfusxo8" path="res://assets/images/Explosion7.png" id="14_csi1d"]
 [ext_resource type="Texture2D" uid="uid://dna1y3q0l1nbh" path="res://assets/images/Explosion8.png" id="15_mocoh"]
 [ext_resource type="AudioStream" uid="uid://dgqg31o37kq1n" path="res://assets/sounds/monster_hit.mp3" id="21_4thaw"]
+
+[sub_resource type="GDScript" id="GDScript_lrl77"]
+script/source = "extends Node2D
+
+
+func game_over() -> void:
+	get_tree().change_scene_to_file(\"res://scenes/game-over.tscn\")
+	$Hud.keep_timing = false
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_o3oc8"]
 animations = [{
@@ -82,12 +100,13 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("15_mocoh")
 }],
-"loop": true,
+"loop": false,
 "name": &"default",
 "speed": 10.0
 }]
 
 [node name="Node2D" type="Node2D"]
+script = SubResource("GDScript_lrl77")
 
 [node name="Monster" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
@@ -113,8 +132,10 @@ script = ExtResource("6_hyebj")
 [node name="timer-node" parent="." instance=ExtResource("7_t6w6a")]
 position = Vector2(578, 51)
 scale = Vector2(9.007, -6.152)
+shrink_duration = 12.0
 
 [node name="Hud" parent="." instance=ExtResource("8_t14eh")]
+visible = true
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
