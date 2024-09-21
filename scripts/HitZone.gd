@@ -1,5 +1,6 @@
 extends Sprite2D  # Assuming this script is attached to the hitzone sprite
 
+var pointsToMakeMonsterMad: int = 5
 var points: int = 0
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -25,6 +26,9 @@ func random_reposition():
 func increment_point():
 	points += 1
 	update_points_label()
+	
+	if points == pointsToMakeMonsterMad:
+		%"Monster".changeMonsterPhaseMad()
 	
 func update_points_label():
 	$"../Hud".points = points
