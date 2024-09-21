@@ -1,5 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://bcqn0tgumfhk5"]
 
+
 [ext_resource type="Texture2D" uid="uid://b3itr12f30n11" path="res://Monster1.png" id="1_op34y"]
 [ext_resource type="Script" path="res://crosshair.gd" id="1_y8dqm"]
 [ext_resource type="Texture2D" uid="uid://ct4y0k0v3oig" path="res://Monster2.png" id="2_jhumk"]
