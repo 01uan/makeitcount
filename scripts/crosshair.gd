@@ -79,31 +79,19 @@ func _process(delta: float) -> void:
 			await get_tree().create_timer(0.5).timeout
 			direction.y = -1
 		pass
-	#if Input.is_action_pressed("ui_right"):
-		#direction.x = 1
-	#elif Input.is_action_pressed("ui_left"):
-		#direction.x = -1
-	#else:
-		#direction.x = 0
-	#
-	#if Input.is_action_pressed("ui_down"):
-		#direction.y = 1
-	#elif Input.is_action_pressed("ui_up"):
-		#direction.y = -1
-	#else:
-		#direction.y = 0
-
 	position += direction * speed * delta
 
 func on_shot_fired():
-	var random_number = randi_range(1,10);
+	var random_number = randi_range(1,15);
 	
-	if random_number <= 2:
+	if random_number <= 3:
 		var random_mode = randi_range(0,1)
 		if random_mode == 0:
 			change_mode("drunk")
-		else:
+		elif random_mode == 1:
 			change_mode("inverted")
+		else:
+			change_mode("hesitation")
 	else:
 		change_mode("normal")
 		
