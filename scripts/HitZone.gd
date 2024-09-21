@@ -27,6 +27,7 @@ func increment_point():
 	update_points_label()
 	
 func update_points_label():
+	$"../timer-node".elapsed_time -= 1
 	$"../Hud".points = points
 	#var points_label = get_node("../PointsLabel")
 	#points_label.text = "Points: " + str(points)
