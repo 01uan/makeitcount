@@ -14,9 +14,8 @@ func _process(delta: float) -> void:
 	pass
 
 
-func on_button_pressed(how_die: String) -> void:
+func _on_retry_pressed() -> void:
 	get_tree().change_scene_to_file(\"res://scenes/main.tscn\")
-	$Label2.text = how_die
 "
 
 [sub_resource type="LabelSettings" id="LabelSettings_l4ljp"]
@@ -92,7 +91,7 @@ offset_bottom = 92.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Button" type="Button" parent="Control"]
+[node name="retry" type="Button" parent="Control"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -118,4 +117,4 @@ grow_vertical = 0
 text = "Return to menu
 "
 
-[connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Control/retry" to="." method="_on_retry_pressed"]
