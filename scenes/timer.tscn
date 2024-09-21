@@ -6,44 +6,35 @@
 [sub_resource type="GDScript" id="GDScript_tudxa"]
 script/source = "extends Node2D
 
-@export var Duration_seconds = 10
-var framerate = 60
-var bar_length
-var original_length
-var remaining_time
+# Variables for the shrinking effect
+@export var shrink_duration: float = 2.0  # Total time to shrink the bar
+@export var bar_initial_size: Vector2  # Initial size of the bar
+@export var bar: Sprite2D  # Reference to the bar Sprite2D node
 
-var bar_pos
-var original_pos
+var elapsed_time: float = 0.0  # Tracks time elapsed
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	original_length = $bar.scale.x
-	bar_length = original_length
-	remaining_time = Duration_seconds
-	
-	original_pos = $bar.position.x
-	bar_pos = original_pos
+func _ready():
+	bar = $bar
+	bar_initial_size = bar.texture.get_size()
+	set_process(true)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	if remaining_time > 0:
-		# Calculate shrink per frame based on original length
-		var shrink_per_frame = original_length / (Duration_seconds * framerate)
-		var move_per_frame = original_pos / (Duration_seconds * framerate)
+func _process(delta: float):
+	if elapsed_time < shrink_duration:
+		elapsed_time += delta
 
-		# Update the bar length and remaining time
-		bar_length -= shrink_per_frame
-		bar_pos -= move_per_frame
-		remaining_time -= delta
+		# Calculate the percentage of the shrink duration passed
+		var progress: float = elapsed_time / shrink_duration
 
-		# Set the new scale
-		$bar.scale.x = bar_length / original_length
-		$bar.position.x = bar_pos
-
-		# Optional: Reset the bar when the countdown ends
-		if remaining_time <= 0:
-			bar_length = 0
-			$bar.scale.x = 0
+		# Calculate the new width based on the progress
+		var new_width: float = lerp(bar_initial_size.x, 0.00, progress)
+		
+		# Update the bar size and adjust position
+		bar.scale.x = new_width / bar_initial_size.x
+		bar.position.x = (bar_initial_size.x * (1 - progress) / 2) - 64 # shouldn't have hardcoded 64
+		
+	else:
+		bar.scale.x = 0  # Ensure it's fully shrunk at the end
+		set_process(false)
 "
 
 [node name="timer-node" type="Node2D"]
