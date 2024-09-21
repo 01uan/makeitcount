@@ -93,7 +93,7 @@ scale = Vector2(1, 1.032)
 sprite_frames = SubResource("SpriteFrames_o3oc8")
 animation = &"mad"
 autoplay = "default"
-frame_progress = 0.861738
+frame_progress = 0.0683712
 script = ExtResource("7_mkpx6")
 
 [node name="Crosshair" type="Sprite2D" parent="."]
@@ -116,4 +116,4 @@ scale = Vector2(9.007, -6.152)
 [node name="Explosion" type="AnimatedSprite2D" parent="."]
 position = Vector2(104, 161)
 sprite_frames = SubResource("SpriteFrames_q4t32")
-frame_progress = 0.804682
+frame_progress = 0.963798
