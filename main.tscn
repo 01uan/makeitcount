@@ -1,10 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://bcqn0tgumfhk5"]
+[gd_scene load_steps=4 format=3 uid="uid://bcqn0tgumfhk5"]
+
+[ext_resource type="Texture2D" uid="uid://b54j7leap80ef" path="res://corsshair_standin.png" id="1_liony"]
+[ext_resource type="Script" path="res://crosshair.gd" id="1_y8dqm"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_2qavo"]
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(350, 217)
+[node name="Monster" type="Sprite2D" parent="."]
+position = Vector2(512, 160)
 scale = Vector2(230.85, 238.32)
 texture = SubResource("PlaceholderTexture2D_2qavo")
+
+[node name="Crosshair" type="Sprite2D" parent="."]
+position = Vector2(223, 226)
+scale = Vector2(-1.77194, 1.37258)
+texture = ExtResource("1_liony")
+script = ExtResource("1_y8dqm")
