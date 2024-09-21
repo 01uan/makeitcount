@@ -1,5 +1,7 @@
 extends Sprite2D  # Assuming this script is attached to the hitzone sprite
 
+@onready var monster_hit = $"../Monster_Hit"
+
 var points: int = 0
 var explosion_sprite: AnimatedSprite2D
 var bullets: int = 3
@@ -17,7 +19,9 @@ func _process(delta):
 			play_explosion_animation()
 			increment_point()
 			random_reposition()
-			show() 
+			%Monster_Hit.play()
+		
+		show() 
 		else:
 			decrement_bullets()
 			if bullets <= 0:

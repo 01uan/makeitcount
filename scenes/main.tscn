@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bcqn0tgumfhk5"]
+[gd_scene load_steps=25 format=3 uid="uid://bcqn0tgumfhk5"]
 
 [ext_resource type="Texture2D" uid="uid://b3itr12f30n11" path="res://assets/images/Monster1.png" id="1_tpknx"]
 [ext_resource type="Texture2D" uid="uid://ct4y0k0v3oig" path="res://assets/images/Monster2.png" id="2_us7o0"]
@@ -20,6 +20,25 @@
 [ext_resource type="Texture2D" uid="uid://bwsm5gruvcuya" path="res://assets/images/Explosion6.png" id="13_h101e"]
 [ext_resource type="Texture2D" uid="uid://tmt0tgfusxo8" path="res://assets/images/Explosion7.png" id="14_csi1d"]
 [ext_resource type="Texture2D" uid="uid://dna1y3q0l1nbh" path="res://assets/images/Explosion8.png" id="15_mocoh"]
+[ext_resource type="AudioStream" uid="uid://dgqg31o37kq1n" path="res://assets/sounds/monster_hit.mp3" id="21_4thaw"]
+
+[sub_resource type="GDScript" id="GDScript_lrl77"]
+script/source = "extends Node2D
+
+
+func game_over() -> void:
+	get_tree().change_scene_to_file(\"res://scenes/game-over.tscn\")
+	$Hud.keep_timing = false
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_o3oc8"]
 animations = [{
@@ -87,6 +106,7 @@ animations = [{
 }]
 
 [node name="Node2D" type="Node2D"]
+script = SubResource("GDScript_lrl77")
 
 [node name="Monster" type="AnimatedSprite2D" parent="."]
 position = Vector2(550, 375)
@@ -130,4 +150,9 @@ grow_vertical = 1
 [node name="Explosion" type="AnimatedSprite2D" parent="."]
 position = Vector2(104, 161)
 sprite_frames = SubResource("SpriteFrames_q4t32")
+autoplay = "default"
 frame_progress = 0.963798
+
+[node name="Monster_Hit" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("21_4thaw")
