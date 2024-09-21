@@ -57,3 +57,7 @@ script = ExtResource("6_hyebj")
 [node name="timer-node" parent="." instance=ExtResource("7_t6w6a")]
 position = Vector2(578, 51)
 scale = Vector2(9.007, -6.152)
+
+[node name="PointsLabel" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0

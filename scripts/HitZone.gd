@@ -1,9 +1,11 @@
 extends Sprite2D  # Assuming this script is attached to the hitzone sprite
 
+var points: int = 0
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if is_crosshair_in_hitzone() and Input.is_action_just_pressed("ui_select"):
 		hide()
+		increment_point()
 		random_reposition()
 		show() 
 
@@ -15,7 +17,15 @@ func is_crosshair_in_hitzone() -> bool:
 	
 	# Customize this threshold based on your sprite sizes (e.g., radius of hitzone)
 	return distance < 15
-
+	
 # Reposition the hitzone randomly within the screen bounds
 func random_reposition():
-	global_position = Vector2(randi() % 1000, randi() % 648)  # Random position based on screen size
+	global_position = Vector2(randi() % 1000, randi() % 500) # Random position based on screen size
+
+func increment_point():
+	points += 1
+	update_points_label()
+	
+func update_points_label():
+	var points_label = get_node("../PointsLabel")
+	points_label.text = "Points: " + str(points)
