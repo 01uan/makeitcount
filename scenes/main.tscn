@@ -29,7 +29,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_rlr3b"]
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_xeeo7"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -50,5 +50,5 @@ script = ExtResource("5_uwowx")
 [node name="HitZone" type="Sprite2D" parent="."]
 position = Vector2(229, 123)
 scale = Vector2(37.1014, -24.4129)
-texture = SubResource("PlaceholderTexture2D_rlr3b")
+texture = SubResource("PlaceholderTexture2D_xeeo7")
 script = ExtResource("6_hyebj")

@@ -21,3 +21,5 @@ func _process(delta: float) -> void:
 		direction.y = 0
 
 	position += direction * speed * delta
+
+			
