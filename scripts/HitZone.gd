@@ -43,6 +43,7 @@ func _on_explosion_animation_finished():
 	explosion_sprite.hide()  # Hide the explosion sprite after the animation is done
 
 func update_points_label():
+	$"../timer-node".elapsed_time -= 1
 	$"../Hud".points = points
 	#var points_label = get_node("../PointsLabel")
 	#points_label.text = "Points: " + str(points)

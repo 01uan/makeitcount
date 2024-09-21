@@ -113,8 +113,10 @@ script = ExtResource("6_hyebj")
 [node name="timer-node" parent="." instance=ExtResource("7_t6w6a")]
 position = Vector2(578, 51)
 scale = Vector2(9.007, -6.152)
+shrink_duration = 12.0
 
 [node name="Hud" parent="." instance=ExtResource("8_t14eh")]
+visible = true
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
@@ -126,8 +128,6 @@ grow_horizontal = 1
 grow_vertical = 1
 
 [node name="Explosion" type="AnimatedSprite2D" parent="."]
-position = Vector2(224, 224)
-scale = Vector2(0.889736, -0.805269)
+position = Vector2(104, 161)
 sprite_frames = SubResource("SpriteFrames_q4t32")
-frame = 7
-frame_progress = 1.0
+frame_progress = 0.963798
