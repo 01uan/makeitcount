@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://qes44gla21tt" path="res://scenes/hud.tscn" id="8_t14eh"]
 [ext_resource type="Texture2D" uid="uid://dfajrhw4nnupe" path="res://assets/images/Explosion2.png" id="9_xv2vx"]
 [ext_resource type="Texture2D" uid="uid://bvgijxdky6pwh" path="res://assets/images/Explosion3.png" id="10_3lsgv"]
+[ext_resource type="Texture2D" uid="uid://cfc2j77gfvlgh" path="res://assets/images/Bullseye.png" id="10_ormxv"]
 [ext_resource type="Texture2D" uid="uid://dxxtaakfhgho2" path="res://assets/images/Explosion4.png" id="11_he2b8"]
 [ext_resource type="Texture2D" uid="uid://bvkf0w4kod2rd" path="res://assets/images/Explosion5.png" id="12_k7skr"]
 [ext_resource type="Texture2D" uid="uid://bwsm5gruvcuya" path="res://assets/images/Explosion6.png" id="13_h101e"]
@@ -72,8 +73,6 @@ animations = [{
 "speed": 32.0
 }]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_xeeo7"]
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_q4t32"]
 animations = [{
 "frames": [{
@@ -118,6 +117,7 @@ autoplay = "default"
 script = ExtResource("7_mkpx6")
 
 [node name="Crosshair" type="Sprite2D" parent="."]
+z_index = 3
 position = Vector2(223, 226)
 scale = Vector2(-1.77194, 1.37258)
 texture = ExtResource("4_gsvwh")
@@ -125,12 +125,13 @@ flip_h = true
 script = ExtResource("5_uwowx")
 
 [node name="HitZone" type="Sprite2D" parent="."]
+z_index = 2
 position = Vector2(229, 123)
-scale = Vector2(37.1014, -24.4129)
-texture = SubResource("PlaceholderTexture2D_xeeo7")
+texture = ExtResource("10_ormxv")
 script = ExtResource("6_hyebj")
 
 [node name="timer-node" parent="." instance=ExtResource("7_t6w6a")]
+z_index = 1
 position = Vector2(578, 51)
 scale = Vector2(9.007, -6.152)
 shrink_duration = 12.0
