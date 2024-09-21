@@ -23,6 +23,7 @@ func _process(delta):
 			increment_point()
 			random_reposition()
 			show() 
+			$"../Crosshair".on_shot_fired()
 		else:
 			decrement_bullets()
 			if bullets <= 0:

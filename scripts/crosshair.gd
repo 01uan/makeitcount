@@ -66,4 +66,15 @@ func _process(delta: float) -> void:
 				
 	position += direction * speed * delta
 
-			
+func on_shot_fired():
+	var random_number = randi_range(1,10);
+	
+	if random_number <= 2:
+		var random_mode = randi_range(0,1)
+		if random_mode == 0:
+			change_mode("drunk")
+		else:
+			change_mode("inverted")
+	else:
+		change_mode("normal")
+		
