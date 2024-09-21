@@ -1,6 +1,8 @@
 extends Sprite2D  # Assuming this script is attached to the hitzone sprite
 
 var pointsToMakeMonsterMad: int = 5
+@onready var monster_hit = $"../Monster_Hit"
+
 var points: int = 0
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -8,6 +10,8 @@ func _process(delta):
 		hide()
 		increment_point()
 		random_reposition()
+		%Monster_Hit.play()
+		
 		show() 
 
 # Check if the crosshair is within a small distance of the hitzone

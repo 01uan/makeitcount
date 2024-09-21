@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bcqn0tgumfhk5"]
+[gd_scene load_steps=25 format=3 uid="uid://bcqn0tgumfhk5"]
 
 [ext_resource type="Texture2D" uid="uid://b3itr12f30n11" path="res://assets/images/Monster1.png" id="1_tpknx"]
 [ext_resource type="Texture2D" uid="uid://ct4y0k0v3oig" path="res://assets/images/Monster2.png" id="2_us7o0"]
@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://bwsm5gruvcuya" path="res://assets/images/Explosion6.png" id="13_h101e"]
 [ext_resource type="Texture2D" uid="uid://tmt0tgfusxo8" path="res://assets/images/Explosion7.png" id="14_csi1d"]
 [ext_resource type="Texture2D" uid="uid://dna1y3q0l1nbh" path="res://assets/images/Explosion8.png" id="15_mocoh"]
+[ext_resource type="AudioStream" uid="uid://dgqg31o37kq1n" path="res://assets/sounds/monster_hit.mp3" id="21_4thaw"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_o3oc8"]
 animations = [{
@@ -127,4 +128,8 @@ grow_vertical = 1
 [node name="Explosion" type="AnimatedSprite2D" parent="."]
 position = Vector2(104, 161)
 sprite_frames = SubResource("SpriteFrames_q4t32")
+autoplay = "default"
 frame_progress = 0.963798
+[node name="Monster_Hit" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("21_4thaw")
