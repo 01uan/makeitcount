@@ -2,6 +2,7 @@ extends Sprite2D  # Assuming this script is attached to the hitzone sprite
 
 var points: int = 0
 var explosion_sprite: AnimatedSprite2D
+var bullets: int = 3
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 
 func _ready():
@@ -10,12 +11,18 @@ func _ready():
 	explosion_sprite.connect("animation_finished", Callable(self, "_on_explosion_animation_finished"))
 	
 func _process(delta):
-	if is_crosshair_in_hitzone() and Input.is_action_just_pressed("ui_select"):
-		hide()
-		play_explosion_animation()
-		increment_point()
-		random_reposition()
-		show() 
+	if bullets > 0 and Input.is_action_just_pressed("ui_select"):
+		if is_crosshair_in_hitzone():
+			hide()
+			play_explosion_animation()
+			increment_point()
+			random_reposition()
+			show() 
+		else:
+			decrement_bullets()
+			if bullets <= 0:
+				# trigger game over screen
+				game_over()
 
 # Check if the crosshair is within a small distance of the hitzone
 func is_crosshair_in_hitzone() -> bool:
@@ -41,6 +48,9 @@ func play_explosion_animation():
 
 func _on_explosion_animation_finished():
 	explosion_sprite.hide()  # Hide the explosion sprite after the animation is done
+
+func decrement_bullets():
+	bullets -= 1
 
 func update_points_label():
 	$"../timer-node".elapsed_time -= 1
