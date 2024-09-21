@@ -20,13 +20,12 @@ func _process(delta):
 			increment_point()
 			random_reposition()
 			%Monster_Hit.play()
-		
-		show() 
+			show() 
 		else:
 			decrement_bullets()
-			if bullets <= 0:
+			#if bullets <= 0:
 				# trigger game over screen
-				game_over()
+				#game_over()
 
 # Check if the crosshair is within a small distance of the hitzone
 func is_crosshair_in_hitzone() -> bool:
