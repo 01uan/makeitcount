@@ -15,18 +15,18 @@ func _ready():
 	
 func _process(delta):
 	if bullets > 0 and Input.is_action_just_pressed("ui_select"):
+		%Monster_Hit.play()
 		if is_crosshair_in_hitzone():
+			bullets = 3
 			hide()
 			play_explosion_animation()
 			increment_point()
 			random_reposition()
-			%Monster_Hit.play()
 			show() 
 		else:
 			decrement_bullets()
-			#if bullets <= 0:
-				# trigger game over screen
-				#game_over()
+			if bullets <= 0:
+				$"..".game_over()
 
 # Check if the crosshair is within a small distance of the hitzone
 func is_crosshair_in_hitzone() -> bool:
