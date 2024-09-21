@@ -63,7 +63,36 @@ func _process(delta: float) -> void:
 				direction.y = 1
 			else:
 				direction.y = -1
-				
+		
+	elif mode == "hesitation":
+		
+		if Input.is_action_pressed("ui_right"):
+			await get_tree().create_timer(0.5).timeout
+			direction.x = 1
+		if Input.is_action_pressed("ui_left"):
+			await get_tree().create_timer(0.5).timeout
+			direction.x = -1
+		if Input.is_action_pressed("ui_down"):
+			await get_tree().create_timer(0.5).timeout
+			direction.y = 1
+		if Input.is_action_pressed("ui_up"):
+			await get_tree().create_timer(0.5).timeout
+			direction.y = -1
+		pass
+	#if Input.is_action_pressed("ui_right"):
+		#direction.x = 1
+	#elif Input.is_action_pressed("ui_left"):
+		#direction.x = -1
+	#else:
+		#direction.x = 0
+	#
+	#if Input.is_action_pressed("ui_down"):
+		#direction.y = 1
+	#elif Input.is_action_pressed("ui_up"):
+		#direction.y = -1
+	#else:
+		#direction.y = 0
+
 	position += direction * speed * delta
 
 func on_shot_fired():
