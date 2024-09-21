@@ -27,5 +27,6 @@ func increment_point():
 	update_points_label()
 	
 func update_points_label():
-	var points_label = get_node("../PointsLabel")
-	points_label.text = "Points: " + str(points)
+	$"../Hud".points = points
+	#var points_label = get_node("../PointsLabel")
+	#points_label.text = "Points: " + str(points)
