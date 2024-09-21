@@ -114,6 +114,7 @@ unique_name_in_owner = true
 position = Vector2(550, 375)
 scale = Vector2(1, 1.032)
 sprite_frames = SubResource("SpriteFrames_o3oc8")
+animation = &"mad"
 autoplay = "default"
 script = ExtResource("7_mkpx6")
 
