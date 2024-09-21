@@ -15,7 +15,7 @@ func _ready():
 	
 func _process(delta):
 	if bullets > 0 and Input.is_action_just_pressed("ui_select"):
-		%Monster_Hit.play()
+		$"../Gun_Hit".play()
 		if is_crosshair_in_hitzone():
 			bullets = 3
 			hide()

@@ -20,7 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://bwsm5gruvcuya" path="res://assets/images/Explosion6.png" id="13_h101e"]
 [ext_resource type="Texture2D" uid="uid://tmt0tgfusxo8" path="res://assets/images/Explosion7.png" id="14_csi1d"]
 [ext_resource type="Texture2D" uid="uid://dna1y3q0l1nbh" path="res://assets/images/Explosion8.png" id="15_mocoh"]
-[ext_resource type="AudioStream" uid="uid://dgqg31o37kq1n" path="res://assets/sounds/monster_hit.mp3" id="21_4thaw"]
+[ext_resource type="AudioStream" uid="uid://dgqg31o37kq1n" path="res://assets/sounds/gun_hit.mp3" id="21_4thaw"]
 [ext_resource type="Texture2D" uid="uid://bv28jf788hrbr" path="res://assets/images/Background.png" id="22_xy5jk"]
 
 [sub_resource type="GDScript" id="GDScript_lrl77"]
@@ -153,8 +153,7 @@ sprite_frames = SubResource("SpriteFrames_q4t32")
 autoplay = "default"
 frame_progress = 0.963798
 
-[node name="Monster_Hit" type="AudioStreamPlayer2D" parent="."]
-unique_name_in_owner = true
+[node name="Gun_Hit" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("21_4thaw")
 
 [node name="Background" type="Sprite2D" parent="."]
