@@ -6,7 +6,7 @@ script/source = "extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -59,7 +59,7 @@ text = "Game Over!"
 label_settings = SubResource("LabelSettings_l4ljp")
 horizontal_alignment = 1
 
-[node name="Label2" type="Label" parent="."]
+[node name="subtitle" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
