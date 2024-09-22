@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://kmvlb6xw5wxf"]
+[gd_scene load_steps=44 format=3 uid="uid://kmvlb6xw5wxf"]
 
 [ext_resource type="Texture2D" uid="uid://b3itr12f30n11" path="res://assets/images/Monster1.png" id="1_tpknx"]
 [ext_resource type="Texture2D" uid="uid://ct4y0k0v3oig" path="res://assets/images/Monster2.png" id="2_us7o0"]
@@ -28,7 +28,7 @@
 [ext_resource type="AudioStream" uid="uid://cnr214qowu5nu" path="res://assets/sounds/Psychedelic Crater.mp3" id="23_6pwtt"]
 [ext_resource type="AudioStream" uid="uid://cle4kpgdmiyyg" path="res://assets/sounds/Aggressor.mp3" id="24_3aic3"]
 [ext_resource type="Script" path="res://scenes/mode.gd" id="24_d6k4p"]
-[ext_resource type="PackedScene" uid="uid://cgy6chdbqocv3" path="res://scenes/global_vars.tscn" id="26_a8dly"]
+[ext_resource type="PackedScene" path="res://scenes/global_vars.tscn" id="26_a8dly"]
 [ext_resource type="AudioStream" uid="uid://cocatt8xere0w" path="res://assets/sounds/2_hit_combo.mp3" id="26_tun4c"]
 [ext_resource type="AudioStream" uid="uid://3am6ijdlo74c" path="res://assets/sounds/3_hit.mp3" id="27_x1s3s"]
 [ext_resource type="AudioStream" uid="uid://bsjjbsdgxg7nf" path="res://assets/sounds/4_hit.mp3" id="28_1yp4l"]
@@ -37,6 +37,7 @@
 [ext_resource type="AudioStream" uid="uid://bbuoib8f1255i" path="res://assets/sounds/monster_hit_1.mp3" id="31_8ha50"]
 [ext_resource type="AudioStream" uid="uid://bdqdrgpiihegg" path="res://assets/sounds/Inverted_sound.mp3" id="32_o2k10"]
 [ext_resource type="AudioStream" uid="uid://twgbnfdcqpw" path="res://assets/sounds/phase1.mp3" id="33_jim7c"]
+[ext_resource type="AudioStream" uid="uid://cxeqppmo2id7f" path="res://assets/sounds/moving_target.mp3" id="37_krbxv"]
 
 [sub_resource type="GDScript" id="GDScript_lrl77"]
 script/source = "extends Node2D
@@ -265,7 +266,7 @@ volume_db = 10.895
 
 [node name="Drunk" type="AudioStreamPlayer2D" parent="Sounds"]
 stream = ExtResource("30_m4ik3")
-volume_db = 9.905
+volume_db = 14.857
 
 [node name="Monster_Hit" type="AudioStreamPlayer2D" parent="Sounds"]
 stream = ExtResource("31_8ha50")
@@ -278,5 +279,9 @@ volume_db = 6.934
 [node name="Phase1" type="AudioStreamPlayer2D" parent="Sounds"]
 stream = ExtResource("33_jim7c")
 volume_db = 11.886
+
+[node name="Moving_Target_Yell" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource("37_krbxv")
+volume_db = 8.915
 
 [node name="Global_Vars" parent="." instance=ExtResource("26_a8dly")]

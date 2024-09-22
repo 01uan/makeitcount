@@ -1,5 +1,10 @@
 extends Label
 
+@onready var delay = $"../../Sounds/Delay"
+@onready var drunk = $"../../Sounds/Drunk"
+@onready var inverted = $"../../Sounds/Inverted"
+@onready var moving_target_yell = $"../../Sounds/Moving_Target_Yell"
+
 var mode = "normal"
 var smallToBig = true
 var leftToRight = true
@@ -35,6 +40,9 @@ func _process(delta: float) -> void:
 			else:
 				smallToBig = true
 	elif mode == "moving target":
+		
+		moving_target_yell.play()
+		
 		if $".".position.x >= 50:
 			leftToRight = false
 		elif $".".position.x <= -50:
