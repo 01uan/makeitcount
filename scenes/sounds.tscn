@@ -1,0 +1,46 @@
+[gd_scene load_steps=10 format=3 uid="uid://fwjce6yo7m8v"]
+
+[ext_resource type="AudioStream" uid="uid://cocatt8xere0w" path="res://assets/sounds/2_hit_combo.mp3" id="1_ofytx"]
+[ext_resource type="AudioStream" uid="uid://3am6ijdlo74c" path="res://assets/sounds/3_hit.mp3" id="2_autwq"]
+[ext_resource type="AudioStream" uid="uid://bsjjbsdgxg7nf" path="res://assets/sounds/4_hit.mp3" id="3_k5png"]
+[ext_resource type="AudioStream" uid="uid://dkmxqyug2fs6a" path="res://assets/sounds/delay.mp3" id="4_o13rl"]
+[ext_resource type="AudioStream" uid="uid://cordiq8vsdq54" path="res://assets/sounds/drunk_1.mp3" id="5_8d4i8"]
+[ext_resource type="AudioStream" uid="uid://bbuoib8f1255i" path="res://assets/sounds/monster_hit_1.mp3" id="6_350gk"]
+[ext_resource type="AudioStream" uid="uid://bdqdrgpiihegg" path="res://assets/sounds/Inverted_sound.mp3" id="7_xfnuy"]
+[ext_resource type="AudioStream" uid="uid://twgbnfdcqpw" path="res://assets/sounds/phase1.mp3" id="8_skuw7"]
+[ext_resource type="AudioStream" uid="uid://cj8xogb54a5k3" path="res://assets/sounds/phase2.mp3" id="9_kxjx1"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="2_Hit_Combo" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("1_ofytx")
+
+[node name="3_Hit_Combo" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_autwq")
+
+[node name="4_Hit_Combo" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_k5png")
+
+[node name="Delay" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_o13rl")
+volume_db = 10.895
+
+[node name="Drunk" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_8d4i8")
+volume_db = 9.905
+
+[node name="Monster_Hit" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_350gk")
+volume_db = 13.866
+
+[node name="Inverted" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_xfnuy")
+volume_db = 6.934
+
+[node name="Phase1" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_skuw7")
+volume_db = 11.886
+
+[node name="Phase2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_kxjx1")
+volume_db = 6.934
