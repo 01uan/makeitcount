@@ -7,12 +7,18 @@ var points: int = 0
 var explosion_sprite: AnimatedSprite2D
 #var bullets: int = 3
 var shot_streak: int = 0
+var speed_x: float = 200;
+var speed_y: float = 200;
+
+var screen_size: Vector2
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 
 func _ready():
 	explosion_sprite = get_node("../Explosion")  # Replace with the correct path to your explosion sprite
 	explosion_sprite.hide()
 	explosion_sprite.connect("animation_finished", Callable(self, "_on_explosion_animation_finished"))
+	random_reposition()	
+	screen_size = get_viewport_rect().size
 	
 func _process(delta):
 	if Input.is_action_just_pressed("ui_select"):
@@ -24,6 +30,11 @@ func _process(delta):
 			random_reposition()
 			show() 
 			$"../Crosshair".on_shot_fired()
+			if points >= pointsToMakeMonsterMad:
+				%Monster.madDamage()
+			else:
+				%Monster.defaultDamage()
+				
 		else:
 			shot_streak = 0
 
@@ -34,7 +45,7 @@ func is_crosshair_in_hitzone() -> bool:
 	print("Distance: ", distance)
 	
 	# Customize this threshold based on your sprite sizes (e.g., radius of hitzone)
-	return distance < 30
+	return distance < 35
 	
 # Reposition the hitzone randomly within the screen bounds
 func random_reposition(): 
@@ -48,7 +59,6 @@ func increment_point():
 		%"Monster".changeMonsterPhaseMad()
 		$"../AudioStreamPlayer".stop()
 		$"../AudioStreamPlayer2".play()
-	
 
 
 func play_explosion_animation():
@@ -75,3 +85,23 @@ func update_points_label():
 	
 	#var points_label = get_node("../PointsLabel")
 	#points_label.text = "Points: " + str(points)
+	
+func set_random_direction():
+	# Randomly set initial direction
+	if randi() % 2 == 0:
+		speed_x = -speed_x
+	if randi() % 2 == 0:
+		speed_y = -speed_y
+
+func move_hitzone(delta: float):
+	# Move hitzone
+	position.x += speed_x * delta
+	position.y += speed_y * delta
+
+	# Bounce off left/right edges
+	if position.x <= 0 or position.x >= screen_size.x - texture.get_size().x:
+		speed_x = -speed_x
+	
+	# Bounce off top/bottom edges
+	if position.y <= 0 or position.y >= screen_size.y - texture.get_size().y:
+		speed_y = -speed_y
