@@ -1,6 +1,6 @@
 extends Sprite2D  # Assuming this script is attached to the hitzone sprite
 
-var pointsToMakeMonsterMad: int = 5
+var pointsToMakeMonsterMad: int = 8
 @onready var monster_hit = $"../Monster_Hit"
 
 var points: int = 0

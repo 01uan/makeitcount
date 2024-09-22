@@ -17,7 +17,7 @@ config/icon="res://assets/images/icon.svg"
 
 [autoload]
 
-Hud="*res://scenes/hud.tscn"
+GlobalVars="*res://scenes/global_vars.tscn"
 
 [display]
 

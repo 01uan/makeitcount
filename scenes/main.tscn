@@ -25,6 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://bv28jf788hrbr" path="res://assets/images/Background.png" id="22_xy5jk"]
 [ext_resource type="AudioStream" uid="uid://cnr214qowu5nu" path="res://assets/sounds/Psychedelic Crater.mp3" id="23_6pwtt"]
 [ext_resource type="AudioStream" uid="uid://cle4kpgdmiyyg" path="res://assets/sounds/Aggressor.mp3" id="24_3aic3"]
+[ext_resource type="PackedScene" uid="uid://cgy6chdbqocv3" path="res://scenes/global_vars.tscn" id="26_a8dly"]
 [ext_resource type="Script" path="res://scenes/mode.gd" id="24_d6k4p"]
 
 [sub_resource type="GDScript" id="GDScript_lrl77"]
@@ -32,9 +33,11 @@ script/source = "extends Node2D
 
 
 func game_over() -> void:
-	get_tree().change_scene_to_file(\"res://scenes/game-over.tscn\")
+	GlobalVars.shots_hit = $Hud.points
+	GlobalVars.time_lasted = $Hud.time_elapsed
+	get_tree().change_scene_to_file(\"res://scenes/game_over.tscn\")
 	$Hud.keep_timing = false
-	
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$AudioStreamPlayer.play()
@@ -212,3 +215,5 @@ stream = ExtResource("23_6pwtt")
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("24_3aic3")
+
+[node name="Global_Vars" parent="." instance=ExtResource("26_a8dly")]
