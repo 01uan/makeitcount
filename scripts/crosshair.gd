@@ -94,4 +94,5 @@ func on_shot_fired():
 			change_mode("hesitation")
 	else:
 		change_mode("normal")
+	$"../Control/Label".text = mode
 		

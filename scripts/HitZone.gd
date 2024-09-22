@@ -38,7 +38,7 @@ func is_crosshair_in_hitzone() -> bool:
 	
 # Reposition the hitzone randomly within the screen bounds
 func random_reposition(): 
-	global_position = Vector2(randi() % 1000, 150 + randi() % 450) # Random position based on screen size
+	global_position = Vector2(100 + randi() % 900, 150 + randi() % 450) # Random position based on screen size
 
 func increment_point():
 	points += 1
