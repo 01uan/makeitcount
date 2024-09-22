@@ -1,7 +1,9 @@
 extends Sprite2D  # Assuming this script is attached to the hitzone sprite
 
-var pointsToMakeMonsterMad: int = 5
-@onready var monster_hit = $"../Monster_Hit"
+var pointsToMakeMonsterMad: int = 8
+
+@onready var gun_hit = $"../Gun_Hit"
+@onready var monster_hit = $"../Sounds/Monster_Hit"
 
 var points: int = 0
 var explosion_sprite: AnimatedSprite2D
@@ -28,7 +30,8 @@ func _process(delta):
 			play_explosion_animation()
 			increment_point()
 			random_reposition()
-			show() 
+			show()
+			monster_hit.play()
 			$"../Crosshair".on_shot_fired()
 			if points >= pointsToMakeMonsterMad:
 				%Monster.madDamage()

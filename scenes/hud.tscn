@@ -4,7 +4,8 @@
 script/source = "extends Control
 
 var begin_time
-@export var points = 0
+var points = 0
+var time_elapsed
 var keep_timing = true
 
 # Called when the node enters the scene tree for the first time.
@@ -15,7 +16,8 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if keep_timing:
-		$TimeLabel.text = \"Time elapsed: \" + str((Time.get_ticks_msec() - begin_time) / 1000.00) 
+		time_elapsed = (Time.get_ticks_msec() - begin_time) / 1000.00
+		$TimeLabel.text = \"Time elapsed: \" + str(time_elapsed) 
 		$PointsLabel.text = \"Points: \" + str(points)
 "
 

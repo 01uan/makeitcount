@@ -1,6 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://dt07lt4xtprgm"]
+[gd_scene load_steps=5 format=3 uid="uid://dt07lt4xtprgm"]
 
 [ext_resource type="Script" path="res://scenes/menu.gd" id="1_x3dlv"]
+[ext_resource type="Texture2D" uid="uid://n15y63qntjrh" path="res://assets/images/start.png" id="2_upjpf"]
+[ext_resource type="AudioStream" uid="uid://derjggjkekprc" path="res://assets/sounds/Dama-May.mp3" id="3_3uwq3"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_bjjjr"]
+font_size = 46
+font_color = Color(1, 0.32549, 0.223529, 1)
+outline_size = 11
+outline_color = Color(0, 0, 0, 1)
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -11,40 +19,72 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_x3dlv")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_right = 1152.0
+offset_bottom = 650.0
+texture = ExtResource("2_upjpf")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect"]
+z_index = 7
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -170.0
-offset_top = -32.0
-offset_right = 170.0
-offset_bottom = 32.0
+offset_left = -171.0
+offset_top = -33.0
+offset_right = 169.0
+offset_bottom = 31.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="StartButton" type="Button" parent="VBoxContainer"]
+[node name="StartButton" type="Button" parent="TextureRect/VBoxContainer"]
+z_index = 7
 layout_mode = 2
 text = "Start
 "
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="TextureRect"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -158.5
-offset_top = -86.5
-offset_right = 158.5
-offset_bottom = 86.5
+offset_left = -199.5
+offset_top = -127.0
+offset_right = 197.5
+offset_bottom = 125.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "You only have 3 shots; make them count!
-Hit the targets to reload."
+text = "You have 12 seconds to live.
+Refill your time by hitting four shots in a row.
+Count your shots and make your fourth shot count."
+horizontal_alignment = 1
 vertical_alignment = 2
 
-[connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[node name="Label2" type="Label" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -305.454
+offset_top = -199.194
+offset_right = 289.546
+offset_bottom = 271.806
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.122173
+pivot_offset = Vector2(308.454, 38.1936)
+text = "Four-Bullet Monster Mania"
+label_settings = SubResource("LabelSettings_bjjjr")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_3uwq3")
+
+[connection signal="pressed" from="TextureRect/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
