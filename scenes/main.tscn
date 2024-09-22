@@ -276,7 +276,7 @@ volume_db = 13.866
 
 [node name="Inverted" type="AudioStreamPlayer2D" parent="Sounds"]
 stream = ExtResource("32_o2k10")
-volume_db = 6.934
+volume_db = 8.914
 
 [node name="Phase1" type="AudioStreamPlayer2D" parent="Sounds"]
 stream = ExtResource("33_jim7c")
