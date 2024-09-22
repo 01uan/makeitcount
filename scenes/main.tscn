@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://bcqn0tgumfhk5"]
+[gd_scene load_steps=32 format=3 uid="uid://bcqn0tgumfhk5"]
 
 [ext_resource type="Texture2D" uid="uid://b3itr12f30n11" path="res://assets/images/Monster1.png" id="1_tpknx"]
 [ext_resource type="Texture2D" uid="uid://ct4y0k0v3oig" path="res://assets/images/Monster2.png" id="2_us7o0"]
@@ -25,6 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://bv28jf788hrbr" path="res://assets/images/Background.png" id="22_xy5jk"]
 [ext_resource type="AudioStream" uid="uid://cnr214qowu5nu" path="res://assets/sounds/Psychedelic Crater.mp3" id="23_6pwtt"]
 [ext_resource type="AudioStream" uid="uid://cle4kpgdmiyyg" path="res://assets/sounds/Aggressor.mp3" id="24_3aic3"]
+[ext_resource type="Script" path="res://scenes/mode.gd" id="24_d6k4p"]
 
 [sub_resource type="GDScript" id="GDScript_lrl77"]
 script/source = "extends Node2D
@@ -108,6 +109,10 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="SystemFont" id="SystemFont_sn1vf"]
+font_names = PackedStringArray("Comic Sans MS")
+font_weight = 999
+
 [sub_resource type="LabelSettings" id="LabelSettings_c2uvn"]
 
 [node name="Node2D" type="Node2D"]
@@ -178,22 +183,29 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="Control"]
+[node name="Mode" type="Label" parent="Control"]
+z_index = 1
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 362.0
-offset_top = 165.0
-offset_right = 739.0
-offset_bottom = 369.0
+offset_right = 767.0
+offset_bottom = 64.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Normal"
+scale = Vector2(1.5, 1.5)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = SubResource("SystemFont_sn1vf")
+text = "Mode: Normal"
 label_settings = SubResource("LabelSettings_c2uvn")
 horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("24_d6k4p")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("23_6pwtt")
