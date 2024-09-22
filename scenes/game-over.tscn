@@ -76,8 +76,8 @@ texture = ExtResource("1_5i5lc")
 
 [node name="Monster" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(596, 275)
-scale = Vector2(5.33175, 4.50873)
+position = Vector2(619, 343)
+scale = Vector2(2.15247, 2.08559)
 sprite_frames = SubResource("SpriteFrames_l0t4p")
 animation = &"mad"
 autoplay = "mad"

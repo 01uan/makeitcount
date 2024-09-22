@@ -110,10 +110,9 @@ script = SubResource("GDScript_lrl77")
 
 [node name="Monster" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(550, 375)
-scale = Vector2(1, 1.032)
+position = Vector2(599, 402)
+scale = Vector2(1.10287, 1.12016)
 sprite_frames = SubResource("SpriteFrames_o3oc8")
-animation = &"mad"
 autoplay = "default"
 script = ExtResource("7_mkpx6")
 

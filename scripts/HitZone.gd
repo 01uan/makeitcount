@@ -36,7 +36,7 @@ func is_crosshair_in_hitzone() -> bool:
 	print("Distance: ", distance)
 	
 	# Customize this threshold based on your sprite sizes (e.g., radius of hitzone)
-	return distance < 15
+	return distance < 20
 	
 # Reposition the hitzone randomly within the screen bounds
 func random_reposition(): 
