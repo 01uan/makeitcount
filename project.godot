@@ -19,10 +19,6 @@ config/icon="res://assets/images/icon.svg"
 
 GlobalVars="*res://scenes/global_vars.tscn"
 
-[display]
-
-window/size/resizable=false
-
 [input]
 
 ar_right={

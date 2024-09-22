@@ -104,9 +104,9 @@ func move_hitzone(delta: float):
 	position.y += speed_y * delta
 
 	# Bounce off left/right edges
-	if position.x <= 0 or position.x >= screen_size.x - texture.get_size().x:
+	if position.x <= 0 or position.x >= 1152 - texture.get_size().x:
 		speed_x = -speed_x
 	
 	# Bounce off top/bottom edges
-	if position.y <= 0 or position.y >= screen_size.y - texture.get_size().y:
+	if position.y <= 0 or position.y >= 648 - texture.get_size().y:
 		speed_y = -speed_y
