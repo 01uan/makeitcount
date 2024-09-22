@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://bcqn0tgumfhk5"]
+[gd_scene load_steps=30 format=3 uid="uid://bcqn0tgumfhk5"]
 
 [ext_resource type="Texture2D" uid="uid://b3itr12f30n11" path="res://assets/images/Monster1.png" id="1_tpknx"]
 [ext_resource type="Texture2D" uid="uid://ct4y0k0v3oig" path="res://assets/images/Monster2.png" id="2_us7o0"]
@@ -23,6 +23,8 @@
 [ext_resource type="Texture2D" uid="uid://dna1y3q0l1nbh" path="res://assets/images/Explosion8.png" id="15_mocoh"]
 [ext_resource type="AudioStream" uid="uid://dgqg31o37kq1n" path="res://assets/sounds/gun_hit.mp3" id="21_4thaw"]
 [ext_resource type="Texture2D" uid="uid://bv28jf788hrbr" path="res://assets/images/Background.png" id="22_xy5jk"]
+[ext_resource type="AudioStream" uid="uid://cnr214qowu5nu" path="res://assets/sounds/Psychedelic Crater.mp3" id="23_6pwtt"]
+[ext_resource type="AudioStream" uid="uid://cle4kpgdmiyyg" path="res://assets/sounds/Aggressor.mp3" id="24_3aic3"]
 
 [sub_resource type="GDScript" id="GDScript_lrl77"]
 script/source = "extends Node2D
@@ -34,6 +36,7 @@ func game_over() -> void:
 	
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	$AudioStreamPlayer.play()
 	pass # Replace with function body.
 
 
@@ -105,6 +108,8 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="LabelSettings" id="LabelSettings_c2uvn"]
+
 [node name="Node2D" type="Node2D"]
 script = SubResource("GDScript_lrl77")
 
@@ -161,3 +166,36 @@ stream = ExtResource("21_4thaw")
 z_index = -100
 position = Vector2(575, 325)
 texture = ExtResource("22_xy5jk")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 362.0
+offset_top = 165.0
+offset_right = 739.0
+offset_bottom = 369.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Normal"
+label_settings = SubResource("LabelSettings_c2uvn")
+horizontal_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("23_6pwtt")
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("24_3aic3")

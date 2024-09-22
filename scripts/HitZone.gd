@@ -5,7 +5,8 @@ var pointsToMakeMonsterMad: int = 5
 
 var points: int = 0
 var explosion_sprite: AnimatedSprite2D
-var bullets: int = 3
+#var bullets: int = 3
+var shot_streak: int = 0
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 
 func _ready():
@@ -14,10 +15,9 @@ func _ready():
 	explosion_sprite.connect("animation_finished", Callable(self, "_on_explosion_animation_finished"))
 	
 func _process(delta):
-	if bullets > 0 and Input.is_action_just_pressed("ui_select"):
+	if Input.is_action_just_pressed("ui_select"):
 		$"../Gun_Hit".play()
 		if is_crosshair_in_hitzone():
-			bullets = 3
 			hide()
 			play_explosion_animation()
 			increment_point()
@@ -25,9 +25,7 @@ func _process(delta):
 			show() 
 			$"../Crosshair".on_shot_fired()
 		else:
-			decrement_bullets()
-			if bullets <= 0:
-				$"..".game_over()
+			shot_streak = 0
 
 # Check if the crosshair is within a small distance of the hitzone
 func is_crosshair_in_hitzone() -> bool:
@@ -48,6 +46,8 @@ func increment_point():
 	
 	if points == pointsToMakeMonsterMad:
 		%"Monster".changeMonsterPhaseMad()
+		$"../AudioStreamPlayer".stop()
+		$"../AudioStreamPlayer2".play()
 	
 
 
@@ -59,12 +59,19 @@ func play_explosion_animation():
 func _on_explosion_animation_finished():
 	explosion_sprite.hide()  # Hide the explosion sprite after the animation is done
 
-func decrement_bullets():
-	bullets -= 1
-
 
 func update_points_label():
-	$"../timer-node".elapsed_time -= 1
+	#if $"../timer-node".elapsed_time <= 2:
+		#$"../timer-node".elapsed_time
+	#else:
+		#$"../timer-node".elapsed_time -= 2
+	
+	if shot_streak == 3:
+		$"../timer-node".elapsed_time = 0
+		shot_streak = 0
+	else:
+		shot_streak += 1
 	$"../Hud".points = points
+	
 	#var points_label = get_node("../PointsLabel")
 	#points_label.text = "Points: " + str(points)

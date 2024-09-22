@@ -30,4 +30,21 @@ layout_mode = 2
 text = "Start
 "
 
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -158.5
+offset_top = -86.5
+offset_right = 158.5
+offset_bottom = 86.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "You only have 3 shots; make them count!
+Hit the targets to reload."
+vertical_alignment = 2
+
 [connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
