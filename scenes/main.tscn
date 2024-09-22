@@ -28,7 +28,7 @@
 [ext_resource type="AudioStream" uid="uid://cnr214qowu5nu" path="res://assets/sounds/Psychedelic Crater.mp3" id="23_6pwtt"]
 [ext_resource type="AudioStream" uid="uid://cle4kpgdmiyyg" path="res://assets/sounds/Aggressor.mp3" id="24_3aic3"]
 [ext_resource type="Script" path="res://scenes/mode.gd" id="24_d6k4p"]
-[ext_resource type="PackedScene" path="res://scenes/global_vars.tscn" id="26_a8dly"]
+[ext_resource type="PackedScene" uid="uid://cgy6chdbqocv3" path="res://scenes/global_vars.tscn" id="26_a8dly"]
 [ext_resource type="AudioStream" uid="uid://cocatt8xere0w" path="res://assets/sounds/2_hit_combo.mp3" id="26_tun4c"]
 [ext_resource type="AudioStream" uid="uid://3am6ijdlo74c" path="res://assets/sounds/3_hit.mp3" id="27_x1s3s"]
 [ext_resource type="AudioStream" uid="uid://bsjjbsdgxg7nf" path="res://assets/sounds/4_hit.mp3" id="28_1yp4l"]
