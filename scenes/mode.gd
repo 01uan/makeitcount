@@ -16,6 +16,9 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if mode == "drunk":
+		
+		drunk.play()
+		
 		var random = randi_range(0, 3)
 		
 		if random == 0:
@@ -27,6 +30,9 @@ func _process(delta: float) -> void:
 		elif random == 3:
 			$".".position.y = $".".position.y - 1
 	elif mode == "hesitation":
+		
+		delay.play()
+		
 		if smallToBig == true:
 			if $".".scale.x < 2.0:
 				$".".scale.x = $".".scale.x + 0.025
