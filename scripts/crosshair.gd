@@ -107,7 +107,7 @@ func _process(delta: float) -> void:
 		position.y = viewportInfo.end.y-1
 
 func on_shot_fired():
-	var random_number = randi_range(3,15)
+	var random_number = randi_range(1,15)
 
 	if random_number <= 3 and $"../HitZone".points >= 8:
 		var random_mode = randi_range(0,3)
