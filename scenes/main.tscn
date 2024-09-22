@@ -201,7 +201,7 @@ frame_progress = 0.963798
 
 [node name="Gun_Hit" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("22_3ahr1")
-volume_db = 16.076
+volume_db = 6.171
 
 [node name="Background" type="Sprite2D" parent="."]
 z_index = -100
@@ -244,9 +244,11 @@ script = ExtResource("24_d6k4p")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("23_6pwtt")
+volume_db = -12.18
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("24_3aic3")
+volume_db = -12.18
 
 [node name="Sounds" type="Node2D" parent="."]
 
@@ -258,15 +260,15 @@ stream = ExtResource("27_x1s3s")
 
 [node name="4_Hit_Combo" type="AudioStreamPlayer2D" parent="Sounds"]
 stream = ExtResource("28_1yp4l")
-volume_db = 16.0
+volume_db = -4.503
 
 [node name="Delay" type="AudioStreamPlayer2D" parent="Sounds"]
 stream = ExtResource("29_ki501")
-volume_db = 10.895
+volume_db = 14.857
 
 [node name="Drunk" type="AudioStreamPlayer2D" parent="Sounds"]
 stream = ExtResource("30_m4ik3")
-volume_db = 14.857
+volume_db = 11.124
 
 [node name="Monster_Hit" type="AudioStreamPlayer2D" parent="Sounds"]
 stream = ExtResource("31_8ha50")
@@ -274,7 +276,7 @@ volume_db = 13.866
 
 [node name="Inverted" type="AudioStreamPlayer2D" parent="Sounds"]
 stream = ExtResource("32_o2k10")
-volume_db = 6.934
+volume_db = 8.914
 
 [node name="Phase1" type="AudioStreamPlayer2D" parent="Sounds"]
 stream = ExtResource("33_jim7c")
@@ -282,6 +284,6 @@ volume_db = 11.886
 
 [node name="Moving_Target_Yell" type="AudioStreamPlayer2D" parent="Sounds"]
 stream = ExtResource("37_krbxv")
-volume_db = 8.915
+volume_db = 11.886
 
 [node name="Global_Vars" parent="." instance=ExtResource("26_a8dly")]

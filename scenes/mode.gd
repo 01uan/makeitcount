@@ -40,9 +40,6 @@ func _process(delta: float) -> void:
 			else:
 				smallToBig = true
 	elif mode == "moving target":
-		
-		moving_target_yell.play()
-		
 		if $".".position.x >= 50:
 			leftToRight = false
 		elif $".".position.x <= -50:
@@ -53,7 +50,6 @@ func _process(delta: float) -> void:
 		elif leftToRight == false:
 			$".".position.x = $".".position.x - 1
 	
-
 # Called to change this label's mode
 func modeChange(modeName) -> void:
 	
@@ -67,19 +63,23 @@ func modeChange(modeName) -> void:
 	
 	
 	if modeName == "drunk":
+		drunk.play()
 		$".".text = "Mode: " + modeName.capitalize()
 
 	elif modeName == "inverted":
+		inverted.play()
 		$".".rotation_degrees = 180
 		$".".position.x = 1159
 		$".".position.y = 96
 		$".".text = "Mode: " + modeName.capitalize()
 		
 	elif modeName == "hesitation":
+		delay.play()
 		smallToBig = true
 		$".".text = "Mode: " + modeName.capitalize()
 		
 	elif modeName == "moving target":
+		moving_target_yell.play()
 		leftToRight = true;
 	else: 
 		$".".text = "Mode: " + modeName.capitalize()
