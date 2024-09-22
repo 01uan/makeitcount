@@ -2,6 +2,7 @@ extends Label
 
 var mode = "normal"
 var smallToBig = true
+var leftToRight = true
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -33,6 +34,16 @@ func _process(delta: float) -> void:
 				$".".scale.y = $".".scale.y - 0.025
 			else:
 				smallToBig = true
+	elif mode == "moving target":
+		if $".".position.x >= 50:
+			leftToRight = false
+		elif $".".position.x <= -50:
+			leftToRight = true
+			
+		if leftToRight == true:
+			$".".position.x = $".".position.x + 1
+		elif leftToRight == false:
+			$".".position.x = $".".position.x - 1
 	
 
 # Called to change this label's mode
@@ -60,5 +71,7 @@ func modeChange(modeName) -> void:
 		smallToBig = true
 		$".".text = "Mode: " + modeName.capitalize()
 		
+	elif modeName == "moving target":
+		leftToRight = true;
 	else: 
 		$".".text = "Mode: " + modeName.capitalize()
