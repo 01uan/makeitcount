@@ -257,6 +257,7 @@ stream = ExtResource("27_x1s3s")
 
 [node name="4_Hit_Combo" type="AudioStreamPlayer2D" parent="Sounds"]
 stream = ExtResource("28_1yp4l")
+volume_db = 16.0
 
 [node name="Delay" type="AudioStreamPlayer2D" parent="Sounds"]
 stream = ExtResource("29_ki501")

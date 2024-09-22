@@ -110,7 +110,7 @@ func on_shot_fired():
 	var random_number = randi_range(3,15)
 
 	if random_number <= 3 and $"../HitZone".points >= 8:
-		var random_mode = randi_range(0,2)
+		var random_mode = randi_range(0,3)
 		if random_mode == 0:
 			change_mode("drunk")
 		elif random_mode == 1:

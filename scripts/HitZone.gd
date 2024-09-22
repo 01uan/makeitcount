@@ -4,6 +4,7 @@ var pointsToMakeMonsterMad: int = 8
 
 @onready var gun_hit = $"../Gun_Hit"
 @onready var monster_hit = $"../Sounds/Monster_Hit"
+@onready var _4_hit_combo: AudioStreamPlayer2D = $"../Sounds/4_Hit_Combo"
 
 var points: int = 0
 var explosion_sprite: AnimatedSprite2D
@@ -78,8 +79,9 @@ func update_points_label():
 		#$"../timer-node".elapsed_time
 	#else:
 		#$"../timer-node".elapsed_time -= 2
-	
+	$"../Sounds/4_Hit_Combo"
 	if shot_streak == 3:
+		_4_hit_combo.play()
 		$"../timer-node".elapsed_time = 0
 		shot_streak = 0
 	else:
