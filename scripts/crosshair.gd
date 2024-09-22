@@ -94,5 +94,15 @@ func _process(delta: float) -> void:
 		#direction.y = 0
 
 	position += direction * speed * delta
+	var viewportInfo : Rect2 = get_viewport().get_visible_rect()
+	if position.x < viewportInfo.position.x:
+		position.x = viewportInfo.position.x
 
-			
+	if position.y < viewportInfo.position.y:
+		position.y = viewportInfo.position.y
+
+	if position.x >= viewportInfo.end.x:
+		position.x = viewportInfo.end.x-1
+#
+	if position.y >= viewportInfo.end.y:
+		position.y = viewportInfo.end.y-1
