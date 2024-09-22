@@ -33,19 +33,20 @@
 [ext_resource type="AudioStream" uid="uid://bbuoib8f1255i" path="res://assets/sounds/monster_hit_1.mp3" id="31_8ha50"]
 [ext_resource type="AudioStream" uid="uid://bdqdrgpiihegg" path="res://assets/sounds/Inverted_sound.mp3" id="32_o2k10"]
 [ext_resource type="AudioStream" uid="uid://twgbnfdcqpw" path="res://assets/sounds/phase1.mp3" id="33_jim7c"]
+[ext_resource type="PackedScene" uid="uid://cgy6chdbqocv3" path="res://scenes/global_vars.tscn" id="26_a8dly"]
+[ext_resource type="Script" path="res://scenes/mode.gd" id="24_d6k4p"]
 
 [sub_resource type="GDScript" id="GDScript_lrl77"]
 script/source = "extends Node2D
 
 
-
 func game_over() -> void:
-	
+
 	#come back to later
-	
-	
-	get_tree().change_scene_to_file(\"res://scenes/game-over.tscn\")
-	
+
+	GlobalVars.shots_hit = $Hud.points
+	GlobalVars.time_lasted = $Hud.time_elapsed
+	get_tree().change_scene_to_file(\"res://scenes/game_over.tscn\")
 	$Hud.keep_timing = false
 	
 # Called when the node enters the scene tree for the first time.
@@ -122,6 +123,10 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="SystemFont" id="SystemFont_sn1vf"]
+font_names = PackedStringArray("Comic Sans MS")
+font_weight = 999
+
 [sub_resource type="LabelSettings" id="LabelSettings_c2uvn"]
 
 [node name="Node2D" type="Node2D"]
@@ -193,22 +198,29 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="Control"]
+[node name="Mode" type="Label" parent="Control"]
+z_index = 1
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 362.0
-offset_top = 165.0
-offset_right = 739.0
-offset_bottom = 369.0
+offset_right = 767.0
+offset_bottom = 64.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Normal"
+scale = Vector2(1.5, 1.5)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = SubResource("SystemFont_sn1vf")
+text = "Mode: Normal"
 label_settings = SubResource("LabelSettings_c2uvn")
 horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("24_d6k4p")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("23_6pwtt")
@@ -246,3 +258,5 @@ volume_db = 6.934
 [node name="Phase1" type="AudioStreamPlayer2D" parent="Sounds"]
 stream = ExtResource("33_jim7c")
 volume_db = 11.886
+
+[node name="Global_Vars" parent="." instance=ExtResource("26_a8dly")]

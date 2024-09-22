@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://cgy6chdbqocv3"]
+
+[sub_resource type="GDScript" id="GDScript_jfvxy"]
+script/source = "extends Node
+
+var time_lasted
+var shots_hit: int
+
+func set_shots(a):
+	shots_hit = a
+
+func set_time(a):
+	time_lasted = a
+"
+
+[node name="Global_Vars" type="Node"]
+script = SubResource("GDScript_jfvxy")
